@@ -1,0 +1,158 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{7FA1D62D-0BE6-49EB-8954-6C78C60F23B0}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>DesktopFacebookInterface</RootNamespace>
+    <AssemblyName>DesktopFacebookInterface</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Facebook, Version=6.0.10.0, Culture=neutral, PublicKeyToken=58cb4f2111d1e6de, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\FacebookAPI\Facebook.dll</HintPath>
+    </Reference>
+    <Reference Include="FbGraphApiWrapper, Version=8.0.0.1, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\FacebookAPI\FbGraphApiWrapper.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AlbumIterator.cs" />
+    <Compile Include="IAlbumAggregate.cs" />
+    <Compile Include="IAlbumIterator.cs" />
+    <Compile Include="AppSettings.cs" />
+    <Compile Include="TabPageObserver.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ContestByComments.cs" />
+    <Compile Include="ContestByLikes.cs" />
+    <Compile Include="ContestByLikesAndComments.cs" />
+    <Compile Include="ContestFactory.cs" />
+    <Compile Include="IContest.cs" />
+    <Compile Include="FormAddContest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAddContest.Designer.cs">
+      <DependentUpon>FormAddContest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormDisplayPhotos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDisplayPhotos.Designer.cs">
+      <DependentUpon>FormDisplayPhotos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormContest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormContest.Designer.cs">
+      <DependentUpon>FormContest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormDiplayWinners.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDiplayWinners.Designer.cs">
+      <DependentUpon>FormDiplayWinners.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormLoginScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormLoginScreen.Designer.cs">
+      <DependentUpon>FormLoginScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormHomeScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormHomeScreen.Designer.cs">
+      <DependentUpon>FormHomeScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMemoriesFetch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMemoriesFetch.Designer.cs">
+      <DependentUpon>FormMemoriesFetch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="FacebookUserFacade.cs" />
+    <EmbeddedResource Include="FormAddContest.resx">
+      <DependentUpon>FormAddContest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormDisplayPhotos.resx">
+      <DependentUpon>FormDisplayPhotos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormContest.resx">
+      <DependentUpon>FormContest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormDiplayWinners.resx">
+      <DependentUpon>FormDiplayWinners.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormLoginScreen.resx">
+      <DependentUpon>FormLoginScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormHomeScreen.resx">
+      <DependentUpon>FormHomeScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMemoriesFetch.resx">
+      <DependentUpon>FormMemoriesFetch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="FacebookWrapper.ObjectModel.Album.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FacebookLogo.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
