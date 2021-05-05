@@ -7,4 +7,4 @@ The application allows the user to connect to his Facebook account,
 
 and have a basic Facebook experience(Wall, Friends, Albums etc.), 
 
-while also providinga new feature - Contests which allows the user to create a contest via a post and manage it through the application.
+while also providing a new feature - Contests which allows the user to create a contest via a post and manage it through the application.
